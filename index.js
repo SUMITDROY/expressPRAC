@@ -23,18 +23,12 @@ app.listen(3000, () =>{
 app.get('/product', async(req,res)=>{
     const products = await Product.find({})
     console.log( products);
-    res.send("all products")
+    res.render('products/index', {products})
 })
 
-
-// app.get('/product', async (req, res) => {
-//     try {
-//       const products = await Product.find({});
-//       console.log(products); 
-//       res.send('products');  
-//     } catch (error) {
-//       console.error(error);
-//       res.status(500).send("Server error while fetching products");
-//     }
-//   });
-  
+app.get('/products/:id', async(req, res) =>{
+    const {id} = req.params;
+    const product = await Product.findById(id)
+    // console.log(product);
+    res.render('products/show',{product})
+} )
