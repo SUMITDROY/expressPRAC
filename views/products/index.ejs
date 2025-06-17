@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=category.toUpperCase()%> products</title>
+    <title><%=category%> products</title>
 </head>
 <body>
     <h1>
@@ -16,5 +16,8 @@
 
     </ul>
     <a href="/products/new">add product</a>
+    <% if (category !== 'ALL') {%>
+        <a href="/products">all products</a>
+        <% } %>
 </body>
 </html>

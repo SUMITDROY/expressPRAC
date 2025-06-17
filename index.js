@@ -33,7 +33,7 @@ app.get('/products', async (req, res) => {
         res.render('products/index', { products, category })
     }else{
         const products = await Product.find({})
-        res.render('products/index', { products, category:'All' })
+        res.render('products/index', { products, category: 'All' })
     }
     
     // console.log( products);
