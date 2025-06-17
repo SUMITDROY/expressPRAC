@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>all products</title>
+    <title><%=category.toUpperCase()%> products</title>
 </head>
 <body>
     <h1>
-        ALL PRODUCTS
+        <%=category.toUpperCase()%> PRODUCTS
     </h1>
     <ul>
         <% for (p of products) {  %>
             <li><a href="/products/<%= p._id %>"><%=p.name %></a></li>
             <% } %>
+
     </ul>
+    <a href="/products/new">add product</a>
 </body>
 </html>
